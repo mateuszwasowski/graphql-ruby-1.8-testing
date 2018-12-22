@@ -3,7 +3,7 @@ class GraphqlController < ApplicationController
     variables = ensure_hash(params[:variables])
     query = params[:query]
     operation_name = params[:operationName]
-    byebug
+
     context = {
       session: session,
       current_user: current_user
