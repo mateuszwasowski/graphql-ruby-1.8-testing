@@ -8,8 +8,8 @@ module Mutations
     field :link, Types::LinkType, null: true
     field :errors, [String], null: false
 
-    def resolve(description:, url:)
-      link = Link.new(description: description, url: url)
+    def resolve(description:, url:, user:)
+      link = Link.new(description: description, url: url, user: context[:current_user])
       if link.save
         {
           link: link,

@@ -4,5 +4,6 @@ module Types
     field :update_link, mutation: Mutations::UpdateLink
     field :delete_link, mutation: Mutations::DeleteLink
     field :create_user, mutation: Mutations::CreateUser
+    field :sign_in_user, mutation: Mutations::SignInUser
   end
 end
