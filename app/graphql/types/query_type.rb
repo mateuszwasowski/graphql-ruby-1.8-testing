@@ -6,6 +6,7 @@ module Types
       description "Find link by id"
       argument :id, ID, required: true
     end
+    field :users, [Types::UserType], null: false, description: "gets all users"
 
     def links
       Link.all
@@ -13,6 +14,10 @@ module Types
 
     def link(id:)
       Link.find(id)
+    end
+
+    def users
+      User.all
     end
   end
 end
